@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# EMAIL=black PASS=jack PASS2=jack sh scripts/users/sign_in.sh
+# EMAIL=black PASS=jack sh scripts/users/sign_in.sh
 
 curl "http://localhost:4741/sign-in" \
   --include \
