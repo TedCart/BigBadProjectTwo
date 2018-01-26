@@ -28,6 +28,7 @@ class GamesController < OpenReadController
 
   # PATCH/PUT /games/1
   def update
+    @game = current_user.games.find(params[:id])
     if @game.update(game_params)
       render json: @game
     else
@@ -48,6 +49,6 @@ class GamesController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def game_params
-      params.require(:game).permit()
+      params.require(:game).permit(:game_over)
     end
 end
