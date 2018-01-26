@@ -1,4 +1,4 @@
-class GameSquaresController < OpenReadController
+class GameSquaresController < ApplicationController
   before_action :set_game_square, only: [:show, :update, :destroy]
 
   # GET /game_squares
@@ -15,7 +15,8 @@ class GameSquaresController < OpenReadController
 
   # POST /game_squares
   def create
-    @game_square = current_user.game_squares.build(game_square_params)
+    # @game_square = current_user.game_squares.build(game_square_params)
+    @game_square = GameSquare.new(game_square_params)
 
     if @game_square.save
       render json: @game_square, status: :created, location: @game_square
