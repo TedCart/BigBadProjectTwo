@@ -7,4 +7,4 @@ curl "http://localhost:4741/sign-out" \
 
 echo
 
-# TOKEN=BAhJIiUyMmY0OTI0YmI0YWQwMjM5OTQyMzA0ZDM5ZDhhYzJmNwY6BkVG--7a97d9048b7d8d8ebae7dabe1308650d9075a5f9 sh scripts/users/sign_out.sh
+# TOKEN=<PASTE_TOKEN_HERE> sh scripts/users/sign_out.sh
