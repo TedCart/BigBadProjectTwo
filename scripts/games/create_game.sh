@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# TOKEN=BAhJIiU1NmJiZTI0ZjIzYzYxMzNlOWE1ZWMxYmM4Y2M5MDBmNwY6BkVG--e203459ae70daf03bf63fe8fe118f0b5ad44fb59 sh scripts/games/create_game.sh
+# TOKEN=BAhJIiU4YjY0ZmI2OGFjZjEzZDI2YTQxYjhhZjI3Y2RkOWI3ZQY6BkVG--3f8aabd812967735ae9316aa43d116a1a938ced0 sh scripts/games/create_game.sh
 
 curl "http://localhost:4741/games" \
   --include \
