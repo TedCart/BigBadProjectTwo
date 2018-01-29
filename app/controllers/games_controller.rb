@@ -17,7 +17,7 @@ class GamesController < OpenReadController
   def create
     # @game = Game.new(game_params)
     # @game = Game.new(user: current_user)
-    @game = current_user.games.build()
+    @game = current_user.games.build(game_params)
 
     if @game.save
       render json: @game, status: :created, location: @game
