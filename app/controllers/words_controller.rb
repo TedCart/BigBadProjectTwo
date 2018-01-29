@@ -1,5 +1,5 @@
 class WordsController < ApplicationController
-  before_action :set_word, only: [:show, :update, :destroy]
+  before_action :set_word, only: [:update, :destroy]
 
   # GET /words
   def index
@@ -8,9 +8,14 @@ class WordsController < ApplicationController
     render json: @words
   end
 
+  def self.one_game(game_id)
+    where(game_id: game_id)
+  end
+
   # GET /words/1
   def show
-    render json: @word
+    word_list = Word.one_game(word_params['game_id'])
+    render json: word_list
   end
 
   # POST /words
