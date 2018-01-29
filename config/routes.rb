@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   resources :words
   post '/words' => 'words#create'
   get '/words' => 'words#index'
+  get '/words/:id' => 'words#show'
 end

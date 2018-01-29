@@ -8,13 +8,13 @@ class WordsController < ApplicationController
     render json: @words
   end
 
-  def self.one_game(game_id)
-    where(game_id: game_id)
+  def self.one_game(id)
+    where(game_id: id)
   end
 
   # GET /words/1
   def show
-    word_list = Word.one_game(word_params['game_id'])
+    word_list = Word.one_game(:id)
     render json: word_list
   end
 
@@ -32,7 +32,7 @@ class WordsController < ApplicationController
         word: new_word,
         game_id: game_id,
         player_id: player_id
-        })
+      })
       @word.save
       if !@word.save
         return render json: @word.errors, status: :unprocessable_entity
