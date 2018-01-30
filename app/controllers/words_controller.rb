@@ -22,17 +22,17 @@ class WordsController < ApplicationController
   def create
     word_beast = word_params
     word_string = word_beast['word']
-    game_id = word_beast['game_id']
-    player_id = word_beast['player_id']
+    @game_id = word_beast['game_id']
+    @player_id = word_beast['player_id']
 
     separated_words = word_string.split(',')
 
     separated_words.each do |new_word|
-      @word = Word.new(word: {
+      @word = Word.new(
         word: new_word,
-        game_id: game_id,
-        player_id: player_id
-      })
+        game_id: @game_id,
+        player_id: @player_id
+      )
       @word.save
       if !@word.save
         return render json: @word.errors, status: :unprocessable_entity
