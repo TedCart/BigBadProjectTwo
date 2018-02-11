@@ -9,12 +9,6 @@ Rails.application.routes.draw do
   resources :users, only: %i[index show]
 
   resources :games
-  get '/games' => 'games#index'
-  get '/games/:id' => 'games#show'
-  post '/games' => 'games#create'
 
-  resources :words
-  post '/words' => 'words#create'
-  get '/words' => 'words#index'
-  get '/words/:id' => 'words#show'
+  # resources :words
 end
